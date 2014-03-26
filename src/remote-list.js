@@ -49,10 +49,10 @@
 		},
 		selectedOption: function(){
 			var selectedOption = null;
-			var val = this.element.val();
-			if(this._selectedOptionCache.val == val){
+			var val = this.val();
+			if(this._selectedOptionCache.val === val){
 				selectedOption = this._selectedOptionCache.elem;
-			} else {
+			} else if(val){
 				this.element
 					.jProp('list')
 					.jProp('options')
@@ -121,11 +121,6 @@
 
 
 				response = function(data){
-					if(typeof data == 'string'){
-						try {
-							data = JSON.parse(data);
-						} catch(e){}
-					}
 					that.setList(data, cVal);
 					reset();
 				};
@@ -179,7 +174,7 @@
 				var lastValue;
 				return function(type){
 					var curValue = inst.val();
-
+					
 					if(curValue === lastValue){
 						return;
 					}

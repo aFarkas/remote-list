@@ -2,7 +2,7 @@
 
 A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build a lightweight autosuggest solution. Can use webshim to polyfill old browsers or enhance modern ones.
 
-* extreme lightweight (less than 1.5kb compressed/gzipped)
+* extreme lightweight (~1.5kb compressed/gzipped)
 * simple, intuitive API
 * includes powerful caching
 * performs server friendly AJAX requests (no multiple requests at once, no requests for older value hints)
@@ -102,8 +102,8 @@ The function recieves the following arguments:
 * value: The value the suggestions should be based on
 * response: A callback function which expects a single argument: the data to suggest to the user.
 * reset/fail: A callback function, which should be invoked, if the data couldn't be retrieved
-* request: An onject with a single property with name of `param` and the `value`.
-* source: Either the source url or the function itsel.
+* request: An object with a single property with name of `param` and the `value`.
+* source: Either the source url or the function itself.
 
 
 ```js
@@ -120,7 +120,7 @@ The data provided by the either the `source URL` or the `source function` should
 
 #### select: (Function)
 
-A callback function, which is invoced, if the user selects an item of the suggestion list. The selected item can be retrieved with the method `selectedOption` and the selected data can be retrieved with method `selectedData`.
+A callback function, which is invoked, if the user selects an item of the suggestion list. The selected item can be retrieved with the method `selectedOption` and the selected data can be retrieved with method `selectedData`.
 
 ```js
 $('.autosuggest').remoteList({
@@ -138,7 +138,7 @@ $('.autosuggest').remoteList({
 });
 ```
 
-As a more flexible solution, the a `listselect` event can be bound to the input element.
+As a more flexible solution, the `listselect` event can be bound to the input element.
 
 ```js
 $('.autosuggest').on('listselect', function(){
@@ -153,7 +153,7 @@ $('.autosuggest').on('listselect', function(){
 
 A callback function which can be used to enhance the rendered markup for a suggestion item. This works only in conjunction with [webshims](https://github.com/aFarkas/webshim).
 
-The callback function should return HTML markup for the given option recieves the following arguments:
+The callback function should return HTML markup for the given option receives the following arguments:
 
 * The value string, which should be used to represent the value for the suggestion
 * The label string (can be empty), which should be used to represent the label for the suggestion
@@ -188,7 +188,7 @@ $('.autosuggest').remoteList({
 
 ### Methods
 
-All methods can be invoked by passing the method name as a string the `$.fn.remoteList` plugin. Additional parameters are passed as an array as the second parameter:
+All methods can be invoked by passing the method name as a string to the `$.fn.remoteList` plugin. Additional parameters are passed as an array as the second parameter:
 
 ```js
 $('.autosuggest').remoteList('search', ['new yo']);
