@@ -15,6 +15,19 @@
 	<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
 
 	<style>
+		html, body {min-height: 100%;}
+		body {
+			max-width: 900px;
+			margin: auto;
+		}
+		.example {
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin: 10px 0;
+		}
+		label > span {
+			display: block;
+		}
 		.polyfill-type {
 			position: absolute;
 			top: 10px;
@@ -54,13 +67,14 @@
 </head>
 
 <body>
-http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html
 
+<h1>Tiny lightweight autosuggest plugin for jQuery</h1>
+<p>This example is using build on top of the HTML5 datalist element and uses <a href="http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html">webshims to polyfill and enhance the user interface</a>.</p>
 <div class="example">
 	<label>
-		static remote list
+		<span>static remote list</span>
 		<input data-remote-list="data.json"
-			   data-list-value-completion="true" data-list-highlight="true"
+			   data-list-value-completion="true" data-list-highlight="true" data-list-focus="true"
 			   class="static-remote" type="text" />
 	</label>
 	<script>
@@ -68,6 +82,46 @@ http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html
 			$('input.static-remote').remoteList({
 				minLength: 0,
 				maxLength: 0,
+				select: function(){
+					if(window.console){
+						console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
+					}
+				}
+			});
+		});
+	</script>
+</div>
+
+<hr />
+
+<div class="example">
+	<label>
+		<span>remote country list (using <a href="http://geo-autocomplete.com">geo-autocomplete.com</a>)</span>
+		<input
+			   data-list-filter="!"
+			   class="geo-autocomplete" type="text" />
+	</label>
+	<script>
+		$(function () {
+			$('input.geo-autocomplete').remoteList({
+				maxLength: 9,
+				source: function(val, response){
+					$.ajax({
+						url: 'http://geo-autocomplete.com/api/country',
+						dataType: 'jsonp',
+						data: {
+							q: val,
+							key: '37693c',
+							nl: true
+						},
+						success: function(data){
+							$.each(data, function(i, item){
+								item.value = item.country_name;
+							});
+							response(data);
+						}
+					})
+				},
 				select: function(){
 					if(window.console){
 						console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))

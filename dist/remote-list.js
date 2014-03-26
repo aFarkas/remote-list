@@ -171,20 +171,20 @@
 			return webshims && webshims.getDataListVal ? webshims.getDataListVal(this.element[0]) : this.element.prop('value');
 		},
 		_bindEvents: function(inst){
-			var searchTimer, selectTimer, char;
+			var searchTimer, selectTimer, character;
 			var options = inst.options;
 
 
 			var detectListselect = (function(){
 				var lastValue;
 				return function(type){
-					var curValue = inst.element.val();
+					var curValue = inst.val();
 
 					if(curValue === lastValue){
 						return;
 					}
 					lastValue = curValue;
-					if(type != 'change' && char && char.toLowerCase() == curValue.charAt(curValue.length -1).toLowerCase()){
+					if(type != 'change' && character && character.toLowerCase() == curValue.charAt(curValue.length -1).toLowerCase()){
 						return;
 					}
 
@@ -230,10 +230,10 @@
 				},
 				keypress: (function(){
 					var removeChar = function(){
-						char = '';
+						character = '';
 					};
 					return function(e){
-						char = String.fromCharCode(e.charCode);
+						character = String.fromCharCode(e.charCode);
 						setTimeout(removeChar, 20);
 					};
 				})(),
