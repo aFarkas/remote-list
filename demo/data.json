@@ -1,0 +1,201 @@
+[
+	{
+		"value": "Alabama"
+	},
+	{
+		"value": "Alaska",
+		"label": "State of Alaska"
+	},
+	{
+		"value": "Arizona",
+		"label": "State of Arizona"
+	},
+	{
+		"value": "Arkansas",
+		"label": "State of Arkansas"
+	},
+	{
+		"value": "California",
+		"label": "State of California"
+	},
+	{
+		"value": "Colorado",
+		"label": "State of Colorado"
+	},
+	{
+		"value": "Connecticut",
+		"label": "State of Connecticut"
+	},
+	{
+		"value": "Delaware",
+		"label": "State of Delaware"
+	},
+	{
+		"value": "Florida",
+		"label": "State of Florida"
+	},
+	{
+		"value": "Georgia",
+		"label": "State of Georgia"
+	},
+	{
+		"value": "Hawaiʻi",
+		"label": "State of Hawaiʻi"
+	},
+	{
+		"value": "Idaho",
+		"label": "State of Idaho"
+	},
+	{
+		"value": "Illinois",
+		"label": "State of Illinois"
+	},
+	{
+		"value": "Indiana",
+		"label": "State of Indiana"
+	},
+	{
+		"value": "Iowa",
+		"label": "State of Iowa"
+	},
+	{
+		"value": "Kansas",
+		"label": "State of Kansas"
+	},
+	{
+		"value": "Kentucky",
+		"label": "Commonwealth of Kentucky"
+	},
+	{
+		"value": "Louisiana",
+		"label": "State of Louisiana"
+	},
+	{
+		"value": "Maine",
+		"label": "State of Maine"
+	},
+	{
+		"value": "Maryland",
+		"label": "State of Maryland"
+	},
+	{
+		"value": "Massachusetts",
+		"label": "Commonwealth of Massachusetts"
+	},
+	{
+		"value": "Michigan",
+		"label": "State of Michigan"
+	},
+	{
+		"value": "Minnesota",
+		"label": "State of Minnesota"
+	},
+	{
+		"value": "Mississippi",
+		"label": "State of Mississippi"
+	},
+	{
+		"value": "Missouri",
+		"label": "State of Missouri"
+	},
+	{
+		"value": "Montana",
+		"label": "State of Montana"
+	},
+	{
+		"value": "Nebraska",
+		"label": "State of Nebraska"
+	},
+	{
+		"value": "Nevada",
+		"label": "State of Nevada"
+	},
+	{
+		"value": "New Hampshire",
+		"label": "State of New Hampshire"
+	},
+	{
+		"value": "New Jersey",
+		"label": "State of New Jersey"
+	},
+	{
+		"value": "New Mexico",
+		"label": "State of New Mexico"
+	},
+	{
+		"value": "New York",
+		"label": "State of New York"
+	},
+	{
+		"value": "North Carolina",
+		"label": "State of North Carolina"
+	},
+	{
+		"value": "North Dakota",
+		"label": "State of North Dakota"
+	},
+	{
+		"value": "Ohio",
+		"label": "State of Ohio"
+	},
+	{
+		"value": "Oklahoma",
+		"label": "State of Oklahoma"
+	},
+	{
+		"value": "Oregon",
+		"label": "State of Oregon"
+	},
+	{
+		"value": "Pennsylvania",
+		"label": "Commonwealth of Pennsylvania"
+	},
+	{
+		"value": "Rhode Island",
+		"label": "State of Rhode Island and Providence Plantations"
+	},
+	{
+		"value": "South Carolina",
+		"label": "State of South Carolina"
+	},
+	{
+		"value": "South Dakota",
+		"label": "State of South Dakota"
+	},
+	{
+		"value": "Tennessee",
+		"label": "State of Tennessee"
+	},
+	{
+		"value": "Texas",
+		"label": "State of Texas"
+	},
+	{
+		"value": "Utah",
+		"label": "State of Utah"
+	},
+	{
+		"value": "Vermont",
+		"label": "State of Vermont"
+	},
+	{
+		"value": "Virginia",
+		"label": "Commonwealth of Virginia"
+	},
+	{
+		"value": "Washington",
+		"label": "State of Washington"
+	},
+	{
+		"value": "West Virginia",
+		"label": "State of West Virginia"
+	},
+	{
+		"value": "Wisconsin",
+		"label": "State of Wisconsin"
+	},
+	{
+		"value": "Wyoming",
+		"label": "State of Wyoming"
+	}
+]

@@ -1,0 +1,39 @@
+{
+	"name": "remote-list",
+	"version": "0.1.0",
+	"title": "A super-lightweight autocomplete / autosuggest plugin",
+
+	"author": {
+		"name": "Alexander Farkas",
+		"url": "https://github.com/aFarkas/"
+	},
+	"keywords": [
+		"webshims",
+		"polyfill",
+		"HTML5",
+		"forms",
+		"ajax",
+		"datalist",
+		"list",
+		"autosuggest",
+		"autosuggestion",
+		"autocomplete",
+		"widget",
+		"UI",
+		"component"
+	],
+	"description": "A lightweight",
+	"docs": "http://afarkas.github.com/webshim/demos/index.html",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aFarkas/remote-list.git"
+	},
+	"main": "dist/",
+	"devDependencies": {
+		"grunt-bytesize": ">=0.1.0",
+		"grunt-contrib-watch": ">=0.3.0",
+		"grunt-contrib-copy": ">=0.4.0",
+		"grunt-contrib-uglify": ">=0.2.7",
+		"grunt": ">=0.4.1"
+	}
+}

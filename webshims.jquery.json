@@ -1,0 +1,35 @@
+{
+	"name": "remote-list",
+	"version": "0.1.0",
+	"title": "superlightweight autosuggest/autocomplete plugin",
+	"licenses" : ["MIT"],
+	"dependencies" : {
+		"jquery" : "1.8.3 - 2.1.x"
+	},
+	"author": {
+		"name": "Alexander Farkas",
+		"url": "https://github.com/aFarkas/"
+	},
+
+	"keywords": [
+		"ajax",
+		"datalist",
+		"list",
+		"autosuggest",
+		"autosuggestion",
+		"autocomplete",
+		"widget",
+		"UI",
+		"component",
+		"webshim",
+		"HTML5"
+	],
+	"license": "MIT",
+	"description": "A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build a lightweight autosuggest solution. Can use webshim to polyfill old browsers or enhance modern ones.",
+	"bugs": "https://github.com/aFarkas/remote-list/issues",
+	
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/aFarkas/remote-list.git"
+	}
+}

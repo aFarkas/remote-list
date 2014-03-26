@@ -1,0 +1,37 @@
+{
+	"name": "remote-list",
+	"version": "0.1.0",
+	"homepage": "https://github.com/aFarkas/remote-list",
+	"authors": [
+		"aFarkas <info@corrupt-system.de>"
+	],
+	"description": "A super-lightweight autocomplete / autosuggest plugin with a simple but powerfull API",
+	"main": ["dist/remote-list.js"],
+	"keywords": [
+		"ajax",
+		"datalist",
+		"list",
+		"autosuggest",
+		"autosuggestion",
+		"autocomplete",
+		"widget",
+		"UI",
+		"component"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests",
+		"build",
+		"src",
+		"demos",
+		"Gruntfile.js",
+		"webshims.jquery.json"
+	],
+	"dependencies": {
+		"jquery": ">= 1.8.2"
+	}
+}

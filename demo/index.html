@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+	<meta name="viewport" content="width=device-width"/>
+	<title>lightweight remote autocomplete/autosuggest with HTML5 datalist</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+	<!-- optional for old browser support or to enhance look and feel -->
+	<script src="http://afarkas.github.io/webshim/js-webshim/minified/extras/modernizr-custom.js"></script>
+	<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+
+	<style>
+		.polyfill-type {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+		}
+	</style>
+	<script>
+		(function () {
+			var stateMatches = {
+				'true': true,
+				'false': false,
+				'auto': 'auto'
+			};
+			var enhanceState = (location.search.match(/enhancelist\=([true|auto|false]+)/) || ['', 'auto'])[1];
+			$(function () {
+				$('.polyfill-type select')
+						.val(enhanceState)
+						.on('change', function () {
+							location.search = 'enhancelist=' + $(this).val();
+						})
+				;
+			});
+
+			webshims.setOptions('forms', {
+				customDatalist: stateMatches[enhanceState]
+			});
+		})();
+
+		webshims.polyfill('forms');
+
+
+	</script>
+	<!-- end optional -->
+
+	<script src="../dist/remote-list.min.js"></script>
+
+</head>
+
+<body>
+http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html
+
+<div class="example">
+	<label>
+		static remote list
+		<input data-remote-list="data.json"
+			   data-list-value-completion="true" data-list-highlight="true"
+			   class="static-remote" type="text" />
+	</label>
+	<script>
+		$(function () {
+			$('input.static-remote').remoteList({
+				minLength: 0,
+				maxLength: 0,
+				select: function(){
+					if(window.console){
+						console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
+					}
+				}
+			});
+		});
+	</script>
+</div>
+
+<label class="polyfill-type">
+	Polyfill/enhance strategy
+	<select>
+		<option value="auto" selected="">"auto" enhance non-mobile</option>
+		<option value="false">false: only polyfill</option>
+		<option value="true">true: enhance all</option>
+	</select>
+</label>
+</body>
+</html>
