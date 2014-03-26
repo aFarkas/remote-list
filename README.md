@@ -11,6 +11,8 @@ A super-lightweight autocomplete / autosuggest plugin with a simple but powerful
 
 *In conjunction with [webshims datalist polyfill](http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html)
 
+**[DEMO](http://afarkas.github.io/remote-list/demo/index.html)**
+
 ## Simple Usage example
 
 ```

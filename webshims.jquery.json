@@ -27,7 +27,7 @@
 	"license": "MIT",
 	"description": "A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build a lightweight autosuggest solution. Can use webshim to polyfill old browsers or enhance modern ones.",
 	"bugs": "https://github.com/aFarkas/remote-list/issues",
-	
+	"demo": "http://afarkas.github.io/remote-list/demo/index.html",
 	"repository": {
 		"type" : "git",
 		"url" : "https://github.com/aFarkas/remote-list.git"
