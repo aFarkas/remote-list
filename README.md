@@ -1,4 +1,4 @@
-# superlightweight autosuggest/autocomplete plugin
+# superlightweight autosuggest / autocomplete plugin
 
 A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build a lightweight autosuggest solution. Can use webshim to polyfill old browsers or enhance modern ones.
 
