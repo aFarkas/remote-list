@@ -6,14 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
 	<meta name="viewport" content="width=device-width"/>
 	<title>lightweight remote autocomplete/autosuggest with HTML5 datalist</title>
-
-	<!-- Latest compiled and minified CSS -->
-	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
-
-	<!-- optional for old browser support or to enhance look and feel -->
-	<script src="http://afarkas.github.io/webshim/js-webshim/minified/extras/modernizr-custom.js"></script>
-	<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
-
 	<style>
 		html, body {min-height: 100%;}
 		body {
@@ -34,6 +26,14 @@
 			right: 10px;
 		}
 	</style>
+	<!-- Latest compiled and minified CSS -->
+	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+	<!-- optional for old browser support or to enhance look and feel -->
+	<script src="http://afarkas.github.io/webshim/js-webshim/minified/extras/modernizr-custom.js"></script>
+	<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+
+
 	<script>
 		(function () {
 			var stateMatches = {
@@ -60,7 +60,7 @@
 
 
 	</script>
-	<!-- end optional -->
+	<!-- end optional polyfill/enhance -->
 
 	<script src="../dist/remote-list.min.js"></script>
 

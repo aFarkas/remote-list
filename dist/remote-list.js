@@ -12,8 +12,6 @@
 			this.options.param = this.element.prop('name') || 'q';
 		}
 
-		this._selectedOptionCache = {val: '', elem: null};
-
 		this._createDatalist();
 		this._bindEvents(this);
 	}
@@ -29,42 +27,29 @@
 
 
 	RemoteList.createOption = function(option){
-		var ret = document.createElement('option');
+		var ret = $(document.createElement('option'));
 		if(!option || typeof option == 'string'){
 			option = {value: option};
 		}
-		$.prop(ret, 'value', option.value);
+        ret.prop('value', option.value);
 		if(option.label){
-			$.prop(ret, 'label', option.label);
+            ret.prop('label', option.label);
 		}
-		$.data(ret, 'optionData', option);
-		return ret;
+        ret.data('optionData', option);
+		return ret[0];
 	};
 
 	RemoteList.prototype = {
 
 		selectedData: function(){
 			var elem = this.selectedOption();
-			return elem && $.data(elem, 'optionData');
+			return elem && $(elem).data('optionData');
 		},
 		selectedOption: function(){
 			var selectedOption = null;
 			var val = this.val();
-			if(this._selectedOptionCache.val === val){
-				selectedOption = this._selectedOptionCache.elem;
-			} else if(val){
-				this.element
-					.jProp('list')
-					.jProp('options')
-					.each(function(){
-						if(val == $.prop(this, 'value')){
-							selectedOption = this;
-							return false;
-						}
-					})
-				;
-				this._selectedOptionCache.elem = selectedOption;
-				this._selectedOptionCache.val = val;
+			if(val){
+                selectedOption = $('[value="'+ val +'"]', this.element.prop('list'))[0] || null;
 			}
 			return selectedOption;
 		},
@@ -140,8 +125,6 @@
 			if(this.currentOptions != options && this.currentVal !== val){
 				this.currentOptions = options;
 				this.currentVal = val;
-				this._selectedOptionCache.val = '';
-				this._selectedOptionCache.elem = null;
 				this.cache[val] = options;
 				options = $.map(options, RemoteList.createOption);
 				this.datalistSelect.html(options);
@@ -155,7 +138,7 @@
 			this.datalistSelect = this.element.prop('list');
 
 			if(!this.datalistSelect){
-				this.datalistSelect = $($.parseHTML('<datalist id="'+ this.id +'"><select /></datalist>'));
+				this.datalistSelect = $('<datalist id="'+ this.id +'"><select /></datalist>');
 				this.element.attr('list', this.id);
 				this.element.after(this.datalistSelect);
 			}
@@ -257,13 +240,13 @@
 				inst = false;
 			}
 			if(inst && inst[fn]){
-				instRet = inst[fn].apply ? inst[fn].apply(inst, args) : inst[fn];
+				instRet = inst[fn].apply ? inst[fn].apply(inst, args || []) : inst[fn];
 				if(instRet !== undefined){
 					ret = instRet;
 					return false;
 				}
 			} else {
-				$.data(this, 'remoteList', new RemoteList(this, $.extend({}, opts, markupOpts)))
+				$(this).data('remoteList', new RemoteList(this, $.extend({}, opts, markupOpts)))
 			}
 		});
 
@@ -273,4 +256,4 @@
 	$.fn.remoteList.constructorFn = RemoteList;
 
 
-})(window.webshims && webshims.$ || jQuery, window.webshims);
+})(window.webshims && webshims.$ || window.jQuery || window.$, window.webshims);
