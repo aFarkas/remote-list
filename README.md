@@ -1,6 +1,6 @@
 # superlightweight autosuggest / autocomplete plugin
 
-A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build a lightweight autosuggest solution. Can use webshim to polyfill old browsers or enhance modern ones.
+A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build an extreme lightweight autosuggest plugin. Can use webshim to polyfill old browsers or enhance modern ones.
 
 * extreme lightweight (~1.5kb compressed/gzipped)
 * simple, intuitive API
@@ -194,17 +194,9 @@ All methods can be invoked by passing the method name as a string to the `$.fn.r
 $('.autosuggest').remoteList('search', ['new yo']);
 ```
 
-#### `search`: (params: searchValue)
-
-Builds a new suggestion list for the given `searchValue`, if `minLength` and `maxLength` options are met. The `searchValue` parameter has to be wrapped into an array.
-
-```js
-$('.autosuggest').remoteList('search', ['new yo']);
-```
-
 #### `selectedOption`
 
-Returns the first option element in the datalist, which has the same value, than the associated input element. If no option is found, it will return `null`. Normally this method is used in a `listselect` event listener.
+Returns the first option element in the datalist, which has the same value, than the associated input element. If no option is found, it will return `null`. Normally this method is used in a `listselect` event listener or the `select` callback function.
 
 ```js
 var option = $('.autosuggest').remoteList('selectedOption');
@@ -212,7 +204,7 @@ var option = $('.autosuggest').remoteList('selectedOption');
 
 #### `selectedData`
 
-Returns data associated with the `selectedOption`. If no option/data is found, it will return `null`. Normally this method is used in a `listselect` event listener.
+Returns data associated with the `selectedOption`. If no option/data is found, it will return `null`. Normally this method is used in a `listselect` event listener or the `select` callback function.
 
 ```js
 var data = $('.autosuggest').remoteList('selectedData');
@@ -225,4 +217,12 @@ $('.autosuggest').on('listselect', function(){
 		console.log('selectedData:', $(this).remoteList('selectedData'));
 	}
 });
+```
+
+#### `search`: (params: searchValue)
+
+Builds a new suggestion list for the given `searchValue`, if `minLength` and `maxLength` options are met. The `searchValue` parameter has to be wrapped into an array.
+
+```js
+$('.autosuggest').remoteList('search', ['new yo']);
 ```
