@@ -1,5 +1,7 @@
-(function($, webshims, undefined){
+(function(undefined){
+	"use strict";
 	var id = 0;
+	var $ = window.webshims && webshims.$ || window.jQuery || window.$;
 
 	function RemoteList(element, options){
 		id++;
@@ -54,7 +56,7 @@
 			return selectedOption;
 		},
 		search: function(val){
-			var dataObj, source, response;
+			var dataObj, source, response, reset;
 			var that = this;
 			var o = this.options;
 			var cVal = val;
@@ -146,7 +148,7 @@
 			this.datalistSelect = $('select', this.datalistSelect);
 		},
 		val: function(){
-			return webshims && webshims.getDataListVal ? webshims.getDataListVal(this.element[0]) : this.element.prop('value');
+			return window.webshims && webshims.getDataListVal ? webshims.getDataListVal(this.element[0]) : this.element.prop('value');
 		},
 		_bindEvents: function(inst){
 			var searchTimer, selectTimer, character;
@@ -225,6 +227,7 @@
 		}
 	};
 
+
 	$.fn.remoteList = function(opts, args){
 		var fn = opts;
 		var ret = this;
@@ -256,4 +259,4 @@
 	$.fn.remoteList.constructorFn = RemoteList;
 
 
-})(window.webshims && webshims.$ || window.jQuery || window.$, window.webshims);
+})();
