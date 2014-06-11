@@ -150,6 +150,9 @@
 		val: function(){
 			return window.webshims && webshims.getDataListVal ? webshims.getDataListVal(this.element[0]) : this.element.prop('value');
 		},
+        widget: function(){
+            return this;
+        },
 		_bindEvents: function(inst){
 			var searchTimer, selectTimer, character;
 			var options = inst.options;
@@ -240,10 +243,9 @@
 			}
 			if(inst && $.isPlainObject(inst)){
 				markupOpts = inst;
-				inst = false;
 			}
-			if(inst && inst[fn]){
-				instRet = inst[fn].apply ? inst[fn].apply(inst, args || []) : inst[fn];
+			if(inst && typeof fn == 'string' && fn in inst){
+				instRet = inst[fn] && inst[fn].apply ? inst[fn].apply(inst, args || []) : inst[fn];
 				if(instRet !== undefined){
 					ret = instRet;
 					return false;
