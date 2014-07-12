@@ -5,7 +5,7 @@
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="chrome=1"/>
 	<meta name="viewport" content="width=device-width"/>
-	<title>lightweight remote autocomplete/autosuggest with HTML5 datalist</title>
+	<title>lightweight remote autocomplete / autosuggest with HTML5 datalist</title>
 	<style>
 		html, body {min-height: 100%;}
 		body {
@@ -25,22 +25,11 @@
 			top: 10px;
 			right: 10px;
 		}
-
-		datalist option {
-			background: #333 !important;
-			color: #fff !important;
-		}
-
-		datalist option:checked {
-			background: #fff !important;
-			color: #333 !important;
-		}
 	</style>
-	<!-- Latest compiled and minified CSS -->
-	<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
 	<!-- optional for old browser support or to enhance look and feel -->
-	<script src="http://afarkas.github.io/webshim/js-webshim/minified/extras/modernizr-custom.js"></script>
 	<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
 
 
@@ -78,30 +67,50 @@
 
 <body>
 
-<h1>Tiny lightweight autosuggest plugin for jQuery</h1>
+<h1>Tiny lightweight autosuggest / typeahead plugin for jQuery</h1>
 <p>This example is build on top of the HTML5 datalist element and uses <a href="http://afarkas.github.io/webshim/demos/demos/cfgs/list-datalist.html">webshims to polyfill and enhance the user interface</a>.</p>
 <p><a href="https://github.com/aFarkas/remote-list">Download/Fork/Repository</a></p>
 <p><a href="https://github.com/aFarkas/remote-list#simple-usage-example">Documentation and API</a></p>
 <div class="example">
-	<label>
-		<span>static remote list</span>
-		<input data-remote-list="data.json"
-			   data-list-highlight="true"
-			   class="static-remote" type="text" />
-	</label>
-	<script>
-		$(function () {
-			$('input.static-remote').remoteList({
-				minLength: 0,
-				maxLength: 0,
-				select: function(){
-					if(window.console){
-						console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
-					}
+<label>
+	<span>states of amercia list</span>
+	<input data-remote-list="data.json"
+		   data-list-highlight="true"
+		   data-list-value-completion="true"
+		   class="static-remote" type="text" />
+</label>
+<script>
+	$(function () {
+		$('input.static-remote').remoteList({
+			minLength: 0,
+			maxLength: 0,
+			select: function(){
+				if(window.console){
+					console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
 				}
-			});
+			}
 		});
-	</script>
+	});
+</script>
+
+<pre><code class="language-markup">
+&lt;input data-remote-list="data.json"
+   data-list-highlight="true"
+   data-list-value-completion="true"
+   class="static-remote" type="text" /&gt;
+</code></pre>
+
+<pre><code class="language-javascript">
+$('input.static-remote').remoteList({
+	minLength: 0,
+	maxLength: 0,
+	select: function(){
+		if(window.console){
+			console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
+		}
+	}
+});
+</code></pre>
 </div>
 
 <hr />
@@ -132,7 +141,7 @@
 							});
 							response(data);
 						}
-					})
+					});
 				},
 				select: function(){
 					if(window.console){
@@ -142,6 +151,40 @@
 			});
 		});
 	</script>
+
+<pre><code class="language-markup">
+	&lt;input
+	data-list-filter="!"
+	class="geo-autocomplete" type="text" /&gt;
+</code></pre>
+
+<pre><code class="language-javascript">
+$('input.geo-autocomplete').remoteList({
+	maxLength: 9,
+	source: function(val, response){
+		$.ajax({
+			url: 'http://geo-autocomplete.com/api/country',
+			dataType: 'jsonp',
+			data: {
+				q: val,
+				key: '37693c',
+				nl: true
+			},
+			success: function(data){
+				$.each(data, function(i, item){
+					item.value = item.country_name;
+				});
+				response(data);
+			}
+		});
+	},
+	select: function(){
+		if(window.console){
+			console.log($(this).remoteList('selectedOption'), $(this).remoteList('selectedData'))
+		}
+	}
+});
+</code></pre>
 </div>
 
 <label class="polyfill-type">
@@ -152,5 +195,11 @@
 		<option value="true">true: enhance all</option>
 	</select>
 </label>
+<script>
+	setTimeout(function(){
+		webshim.loader.loadCSS('http://afarkas.github.io/webshim/demos/css/prism.css');
+		webshim.loader.loadScript('http://afarkas.github.io/webshim/demos/demo-js/src/prism.js');
+	});
+</script>
 </body>
 </html>

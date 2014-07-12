@@ -1,6 +1,6 @@
 {
 	"name": "remote-list",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"title": "superlightweight autosuggest / autocomplete plugin",
 	"licenses": [
 		{
@@ -23,6 +23,7 @@
 		"autosuggest",
 		"autosuggestion",
 		"autocomplete",
+        "typeahead",
 		"widget",
 		"UI",
 		"component",
