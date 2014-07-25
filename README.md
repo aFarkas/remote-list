@@ -1,7 +1,7 @@
 # Remote-List
-## A super lightweight autosuggest / autocomplete plugin
+## An ultra lightweight autosuggest / autocomplete plugin
 
-A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 `datalist` element to build an extreme lightweight autosuggest plugin. Can use webshim to polyfill old browsers or enhance modern ones.
+An ultra lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 `datalist` element to build an extreme lightweight autosuggest plugin. Can use webshim to polyfill old browsers or enhance modern ones.
 
 * extreme lightweight (~1.5kb compressed/gzipped)
 * simple, intuitive API
