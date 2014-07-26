@@ -1,6 +1,7 @@
-# superlightweight autosuggest / autocomplete plugin
+# Remote-List
+## An ultra lightweight autosuggest / autocomplete plugin
 
-A super-lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 datalist element to build an extreme lightweight autosuggest plugin. Can use webshim to polyfill old browsers or enhance modern ones.
+An ultra lightweight autocomplete / autosuggest plugin with a simple but powerful API. Leverages the HTML5 `datalist` element to build an extreme lightweight autosuggest plugin. Can use webshim to polyfill old browsers or enhance modern ones.
 
 * extreme lightweight (~1.5kb compressed/gzipped)
 * simple, intuitive API
@@ -67,7 +68,7 @@ $('.autosuggest').remoteList({minLength: 3});
 ```
 
 #### `maxLength`: (Number default: -1)
-The maximum number of characters a new search should be tryed. Otherwise the data from cache is used. If the user copies more characters at once into the input field and there is no cached data, the string will be shortened and then requested.
+The maximum number of characters a new search should be tried. Otherwise the data from cache is used. If the user copies more characters at once into the input field and there is no cached data, the string will be shortened and then requested.
 
 In case of static data this number should be set to 0 so a search is only done once.
 
@@ -97,7 +98,7 @@ The data source for the suggestions. The data will requested with each user inpu
 
 **Function**: The function callback offers much flexibility. It serves as a simple data provider. And should be used, if the request or response has to be modified.
 
-The function recieves the following arguments:
+The function receives the following arguments:
 
 * value: The value the suggestions should be based on
 * response: A callback function which expects a single argument: the data to suggest to the user.
