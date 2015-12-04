@@ -181,8 +181,10 @@
 					}
 				};
 			})();
-
-			inst.element.on({
+			
+			// Make sure we only bind event once to avoid too much bubbling
+			if (!inst.element.data('remotelist-binded')) {
+				inst.element.on({
 				'input focus': (function(){
 
 					var fn = function(){
@@ -226,7 +228,8 @@
 						return options.renderItem('<span class="option-value">'+ data.item.value +'</span>', data.item.label && '<span class="option-label">'+ data.item.label +'</span>', $.data(data.item.elem, 'optionData'));
 					}
 				}
-			})
+			}).data('remotelist-binded', true);
+			}
 		}
 	};
 
